@@ -5,10 +5,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Sufflavus/file-metadata-microservice.git"
+  },
   "author": "",
   "license": "MIT",
   "description": "",
   "dependencies": {
-    "express": "^4.14.0"
+    "express": "^4.14.0",
+    "multer": "^1.1.0"
   }
 }
