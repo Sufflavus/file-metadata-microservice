@@ -18,10 +18,14 @@
 				Submit a file to view its filesize.
 			</h2>
 			
-			<form>
+			<form id="uploadForm"
+		        enctype="multipart/form-data"
+		        action="/api/upload"
+		        method="post">
+				
                 <div class="form-group">
-                    <label for="inputFile">File input</label>
-                    <input type="file" id="inputFile">
+                    <label for="fileUploader">File input</label>
+                    <input type="file" id="fileUploader" name="fileUploader">
                 </div>
                 
                 <button type="submit" class="btn btn-primary">Submit</button>

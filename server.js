@@ -1,4 +1,6 @@
 var express = require('express');
+var multer  = require('multer');
+var upload = multer({ dest: 'uploads/' });
 
 var app = express();
 var port = process.env.PORT || 8080;
@@ -10,6 +12,12 @@ app.get('/', function (req, res) {
 });
 
 app.get('/favicon.ico', function (req, res) {
+});
+
+app.post('/api/upload', upload.single('fileUploader'), function(req, res){
+	res.json({
+	  size: req.file.size
+	});
 });
 
 app.listen(port, function () {
