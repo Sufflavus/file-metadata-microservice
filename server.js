@@ -1,4 +1,5 @@
 var express = require('express');
+var fs = require('fs');
 var multer  = require('multer');
 var upload = multer({ dest: 'uploads/' });
 
@@ -14,7 +15,8 @@ app.get('/', function (req, res) {
 app.get('/favicon.ico', function (req, res) {
 });
 
-app.post('/api/upload', upload.single('fileUploader'), function(req, res){
+app.post('/api/upload', upload.single('fileUploader'), function(req, res) {
+    fs.unlinkSync(req.file.path);
 	res.json({
 	  size: req.file.size
 	});
