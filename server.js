@@ -3,7 +3,7 @@ var multer  = require('multer');
 var upload = multer({ dest: 'uploads/' });
 
 var app = express();
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 1024;
 
 var path = process.cwd();
 
